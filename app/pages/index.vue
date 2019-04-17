@@ -1,19 +1,18 @@
 <template>
-  <Page class="page">
-    <ActionBar class="action-bar">
-      <Label class="action-bar-title">Bieganie</Label>
-    </ActionBar>
+  <Page actionBarHidden="true">
     <StackLayout>
-      <Label>
-        {{ $store.state.route }}
-      </Label>
+      <Header />
     </StackLayout>
   </Page>
 </template>
 
 <script>
-export default {
+import Header from '@/components/Header.vue';
 
+export default {
+  components: {
+    Header
+  }
 };
 </script>
 
