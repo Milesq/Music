@@ -4,19 +4,16 @@
       <label class="title">WAKING UP</label>
     </StackLayout>
 
-    <StackLayout class="content">
-      <ScrollView>
-        <Label style="font-size: 45px;">
-          d dsf
-   s
-        </Label>
-      </ScrollView>
-    </StackLayout>
+    <ScrollView class="content">
+      <StackLayout>
+        <slot></slot>
+      </StackLayout>
+    </ScrollView>
 
     <FlexboxLayout class="footer">
-      <Label>Home</Label>
-      <Label>Lessons</Label>
-      <Label>Walking</Label>
+      <Label @tap="$store.commit('push', '/')">Home</Label>
+      <Label @tap="$store.commit('push', 'lessons')">Lessons</Label>
+      <Label @tap="$store.commit('push', 'walking')">Walking</Label>
     </FlexboxLayout>
   </DockLayout>
 </template>
@@ -40,11 +37,11 @@
   background-color: #00f;
   color: white;
   dock: bottom;
-  // justify-content: center;
+  padding: 15px;
+  justify-content: space-around;
 }
 
 .title {
-  font-size: 32px;
   color: black;
 }
 </style>

@@ -1,19 +1,18 @@
 <template>
-  <Page class="page">
-    <ActionBar class="action-bar">
-      <Label class="action-bar-title">Bieganie</Label>
-    </ActionBar>
-    <StackLayout>
-      <Label>
-        lekcje
-      </Label>
-    </StackLayout>
+  <Page actionBarHidden="true">
+    <PageTemplate>
+      <Label>lessons</Label>
+    </PageTemplate>
   </Page>
 </template>
 
 <script>
-export default {
+import PageTemplate from '@/components/PageTemplate.vue';
 
+export default {
+  components: {
+    PageTemplate
+  }
 };
 </script>
 

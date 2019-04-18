@@ -1,17 +1,17 @@
 <template>
   <Page actionBarHidden="true">
-    <StackLayout>
-      <Header />
-    </StackLayout>
+    <PageTemplate>
+      <Label>strona główna</Label>
+    </PageTemplate>
   </Page>
 </template>
 
 <script>
-import Header from '@/components/Header.vue';
+import PageTemplate from '@/components/PageTemplate.vue';
 
 export default {
   components: {
-    Header
+    PageTemplate
   }
 };
 </script>
