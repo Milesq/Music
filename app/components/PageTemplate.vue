@@ -1,7 +1,8 @@
 <template>
   <DockLayout stretchLastChild="false" class="wrapper">
     <StackLayout class="header">
-      <label class="title">WAKING UP</label>
+      <label class="title" @tap="$store.commit('push', '/')">WAKING UP</label>
+      <label class="subtitle">Lorem Ipsum</label>
     </StackLayout>
 
     <ScrollView class="content">
@@ -64,15 +65,25 @@ export default {
 <style lang="scss" scoped>
 .wrapper {
   height: 100%;
+  font-family: sans-serif;
 }
 
 .header {
-  background-color: #ff0;
+  text-align: center;
   dock: top;
+
+  .subtitle {
+    color: #888;
+  }
+
+  .title {
+    color: black;
+    font-size: 32;
+  }
 }
 
 .content {
-  background-color: #0f0;
+  background-color: #eee;
   dock: top;
 }
 
@@ -85,10 +96,6 @@ export default {
   dock: bottom;
   padding: 15px;
   justify-content: space-around;
-}
-
-.title {
-  color: black;
 }
 
 .menu {
