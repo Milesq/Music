@@ -3,7 +3,7 @@ import store from './store.js';
 
 import index from "./pages/index.vue";
 import lessons from "./pages/lessons.vue";
-import walking from "./pages/walking.vue";
+import targets from "./pages/targets.vue";
 
 Vue.registerElement(
   'CardView',
@@ -18,7 +18,7 @@ new Vue({
   components: {
     index,
     lessons,
-    walking
+    targets
   },
   store,
   computed: {

@@ -35,15 +35,15 @@
           <Label>Lessons</Label>
         </FlexboxLayout>
 
-        <FlexboxLayout @tap="$store.commit('push', 'walking')" :class="['menu__option', {
-          active: isActive('walking')
+        <FlexboxLayout @tap="$store.commit('push', 'targets')" :class="['menu__option', {
+          active: isActive('targets')
         }]">
           <Label>
             <FormattedString>
-              <Span class="fas menu__icon" text.decode="&#xf17b;"/>
+              <Span class="fas menu__icon" text.decode="&#xf192;"/>
             </FormattedString>
           </Label>
-          <Label>Walking</Label>
+          <Label>Targets</Label>
         </FlexboxLayout>
       </FlexboxLayout>
     </FlexboxLayout>
