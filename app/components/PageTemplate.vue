@@ -1,51 +1,53 @@
 <template>
-  <DockLayout stretchLastChild="false" class="wrapper">
+  <StackLayout stretchLastChild="false" class="wrapper">
     <StackLayout class="header">
       <label class="title" @tap="$store.commit('push', '/')">WAKING UP</label>
       <label class="subtitle">Lorem Ipsum</label>
     </StackLayout>
 
-    <ScrollView class="content">
-      <StackLayout>
-        <slot></slot>
-      </StackLayout>
-    </ScrollView>
+    <FlexboxLayout class="usable-part">
+      <ScrollView class="content">
+        <StackLayout>
+          <slot></slot>
+        </StackLayout>
+      </ScrollView>
 
-    <FlexboxLayout class="footer">
-      <FlexboxLayout @tap="$store.commit('push', '/')" :class="['menu__option', {
-        active: isActive('index')
-      }]">
-        <Label>
-          <FormattedString>
-            <Span class="fas menu__icon" text.decode="&#xf015;"/>
-          </FormattedString>
-        </Label>
-        <Label>Home</Label>
-      </FlexboxLayout>
+      <FlexboxLayout class="footer">
+        <FlexboxLayout @tap="$store.commit('push', '/')" :class="['menu__option', {
+          active: isActive('index')
+        }]">
+          <Label>
+            <FormattedString>
+              <Span class="fas menu__icon" text.decode="&#xf015;"/>
+            </FormattedString>
+          </Label>
+          <Label>Home</Label>
+        </FlexboxLayout>
 
-      <FlexboxLayout @tap="$store.commit('push', 'lessons')" :class="['menu__option', {
-        active: isActive('lessons')
-      }]">
-        <Label>
-          <FormattedString>
-            <Span class="fas menu__icon" text.decode="&#xf02e;"/>
-          </FormattedString>
-        </Label>
-        <Label>Lessons</Label>
-      </FlexboxLayout>
+        <FlexboxLayout @tap="$store.commit('push', 'lessons')" :class="['menu__option', {
+          active: isActive('lessons')
+        }]">
+          <Label>
+            <FormattedString>
+              <Span class="fas menu__icon" text.decode="&#xf02e;"/>
+            </FormattedString>
+          </Label>
+          <Label>Lessons</Label>
+        </FlexboxLayout>
 
-      <FlexboxLayout @tap="$store.commit('push', 'walking')" :class="['menu__option', {
-        active: isActive('walking')
-      }]">
-        <Label>
-          <FormattedString>
-            <Span class="fas menu__icon" text.decode="&#xf17b;"/>
-          </FormattedString>
-        </Label>
-        <Label>Walking</Label>
+        <FlexboxLayout @tap="$store.commit('push', 'walking')" :class="['menu__option', {
+          active: isActive('walking')
+        }]">
+          <Label>
+            <FormattedString>
+              <Span class="fas menu__icon" text.decode="&#xf17b;"/>
+            </FormattedString>
+          </Label>
+          <Label>Walking</Label>
+        </FlexboxLayout>
       </FlexboxLayout>
     </FlexboxLayout>
-  </DockLayout>
+  </StackLayout>
 </template>
 
 <script>
@@ -70,7 +72,6 @@ export default {
 
 .header {
   text-align: center;
-  dock: top;
 
   .subtitle {
     color: #888;
@@ -82,9 +83,14 @@ export default {
   }
 }
 
+.usable-part {
+ flex-direction: column;
+ justify-content: space-between;
+ height: 100%;
+}
+
 .content {
   background-color: #eee;
-  dock: top;
 }
 
 .footer {
@@ -93,9 +99,10 @@ export default {
   font-weight: 800;
   border-top-width: .5;
   border-top-color: black;
-  dock: bottom;
   padding: 15px;
   justify-content: space-around;
+
+  min-height: 55;
 }
 
 .menu {
