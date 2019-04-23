@@ -5,6 +5,11 @@ import index from "./pages/index.vue";
 import lessons from "./pages/lessons.vue";
 import walking from "./pages/walking.vue";
 
+Vue.registerElement(
+  'CardView',
+  () => require('nativescript-cardview').CardView
+);
+
 new Vue({
   template: `
     <Frame>

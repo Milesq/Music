@@ -1,7 +1,12 @@
 <template>
   <Page actionBarHidden="true">
     <PageTemplate>
-      <Label>strona główna</Label>
+      <Label>Recommended</Label>
+      <CardView margin="10" elevation="10" radius="10">
+        <StackLayout>
+          <Image src="https://placeimg.com/640/400/any" />
+        </StackLayout>
+      </CardView>
     </PageTemplate>
   </Page>
 </template>
