@@ -40,6 +40,7 @@
             v-for="lesson in lessons"
             :key="lesson.title"
 
+            @click.native="goToLesson(lesson.id)"
             :img="lesson.img"
             :title="lesson.title"
             :time="lesson.time" />
@@ -52,29 +53,19 @@
 <script>
 import PageTemplate from '@/components/PageTemplate.vue';
 import Lesson from '@/components/Lesson.vue';
+import lessons from '@/lessons.js';
 
 export default {
   data() {
     return {
       day: 1,
-      lessons: [
-        {
-          // img: 'https://placeimg.com/200/135/any',
-          title: 'Welcome',
-          time: 123
-        },
-        {
-          img: 'https://placeimg.com/200/135/any',
-          title: 'Second lesson',
-          time: 121
-        },
-        {
-          img: 'https://placeimg.com/200/135/nature',
-          title: 'Second lesson',
-          time: 545
-        }
-      ]
+      lessons
     };
+  },
+  methods: {
+    goToLesson(id) {
+      console.log(id);
+    }
   },
   components: {
     PageTemplate,
