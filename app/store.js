@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    route: '/'
+    route: 'targets'
   },
   mutations: {
     push(state, path) {

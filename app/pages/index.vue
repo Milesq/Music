@@ -40,7 +40,7 @@
             v-for="lesson in lessons"
             :key="lesson.title"
 
-            @click.native="goToLesson(lesson.id)"
+            @tap.native="goToLesson(lesson.id)"
             :img="lesson.img"
             :title="lesson.title"
             :time="lesson.time" />
@@ -64,7 +64,7 @@ export default {
   },
   methods: {
     goToLesson(id) {
-      console.log(id);
+      console.log('index ' + id);
     }
   },
   components: {

@@ -1,6 +1,6 @@
 <template>
   <FlexboxLayout class="lessonWrapper">
-    <StackLayout orientation="horizontal">
+    <StackLayout orientation="horizontal" @tap="$emit('play', id)">
       <CardView class="img" margin="15" elevation="10" radius="10">
         <Image :src="img" />
       </CardView>
@@ -9,11 +9,11 @@
         <Label class="time">{{ time | secondsToMinutes }}</Label>
       </StackLayout>
     </StackLayout>
-    <Label>
+    <Label @tap="$emit('download', id)">
       <FormattedString>
         <Span
           :style="{
-            color: downloaded(id)? '#777' : ''
+            color: downloaded(id)? '#aaa' : ''
           }"
           class="fas menu__icon download"
           text.decode="&#xf063;"/>
@@ -45,9 +45,6 @@ export default {
     }
   },
   methods: {
-    download(num = required()) {
-      console.log('downloading...');
-    },
     downloaded(num = required()) {
       return true;
     }

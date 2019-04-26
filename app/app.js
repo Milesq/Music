@@ -5,10 +5,8 @@ import index from "./pages/index.vue";
 import lessons from "./pages/lessons.vue";
 import targets from "./pages/targets.vue";
 
-Vue.registerElement(
-  'CardView',
-  () => require('nativescript-cardview').CardView
-);
+import { CardView } from 'nativescript-cardview'
+Vue.registerElement('CardView', () => CardView);
 
 new Vue({
   template: `
