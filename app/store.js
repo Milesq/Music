@@ -5,11 +5,15 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    route: 'targets'
+    route: 'targets',
+    music: null
   },
   mutations: {
     push(state, path) {
       state.route = path;
+    },
+    setTrack(state, path) {
+      state.music = `~/audio/${path}`;
     }
   }
 });

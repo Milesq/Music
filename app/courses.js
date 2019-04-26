@@ -8,13 +8,15 @@ export default [
         img: 'https://placeimg.com/200/135/any',
         title: 'Second lesson',
         time: 121,
-        id: 1
+        id: 1,
+        src: 'myLesson.mp3'
       },
       {
         img: 'https://placeimg.com/200/135/nature',
         title: 'Second lesson',
         time: 121,
-        id: 2
+        id: 2,
+        src: 'myLesson.mp3'
       }
     ]
   },
@@ -27,7 +29,8 @@ export default [
         img: 'https://placeimg.com/200/135/any',
         title: 'Second lesson',
         time: 121,
-        id: 1
+        id: 1,
+        src: 'myLesson.mp3'
       }
     ]
   },
@@ -40,19 +43,22 @@ export default [
         img: 'https://placeimg.com/200/135/any',
         title: 'Second lesson',
         time: 121,
-        id: 1
+        id: 1,
+        src: 'myLesson.mp3'
       },
       {
         img: 'https://placeimg.com/200/135/any',
         title: 'Second lesson',
         time: 121,
-        id: 2
+        id: 2,
+        src: 'myLesson.mp3'
       },
       {
         img: 'https://placeimg.com/200/135/any',
         title: 'Second lesson',
         time: 121,
-        id: 3
+        id: 3,
+        src: 'myLesson.mp3'
       }
     ]
   }

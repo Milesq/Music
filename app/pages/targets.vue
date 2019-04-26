@@ -37,6 +37,7 @@
 import PageTemplate from '@/components/PageTemplate.vue';
 import Lesson from '@/components/Lesson.vue';
 import FitLesson from '@/components/FitLesson.vue';
+import Play from '@/components/Play.vue';
 import courses from '@/courses';
 
 const { screen: { mainScreen: screen } } = require('platform');
@@ -59,7 +60,9 @@ export default {
       console.log(this.currentCourse.targets[ev]);
     },
     play(ev) {
-      console.log('play' + this.currentCourse.targets[ev]);
+      const mp3 = this.currentCourse.targets[ev].src;
+      this.$store.commit('setTrack', mp3);
+      this.$navigateTo(Play);
     }
   },
   components: {
