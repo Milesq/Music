@@ -13,7 +13,7 @@ export default new Vuex.Store({
       state.route = path;
     },
     setTrack(state, path) {
-      state.music = `~/audio/${path}`;
+      state.music = path;
     }
   }
 });

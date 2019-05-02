@@ -61,7 +61,11 @@ export default {
     },
     play(ev) {
       const mp3 = this.currentCourse.targets[ev].src;
-      this.$store.commit('setTrack', mp3);
+      this.$store.commit('setTrack', {
+        title: this.currentCourse.targets[ev].title,
+        img: this.currentCourse.targets[ev].img,
+        src: mp3
+      });
       this.$navigateTo(Play);
     }
   },
